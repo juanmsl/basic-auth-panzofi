@@ -1,0 +1,45 @@
+$color-common: #555555;
+
+$color-primary: #325CAE;
+$color-secondary: #F7FAFC;
+
+$color-active: #13CE66;
+$color-warning: #FFBA5C;
+$color-info: #1D9AC1;
+$color-alert: #F95F62;
+$color-default: #EEEEEE;
+
+%primary {
+  background: linear-gradient(-8deg, $color-primary 50%, darken($color-primary, 5) 50%);
+  color: $color-secondary;
+}
+
+.primary {
+  @extend %primary;
+  padding: 0 .5em;
+}
+
+%active {
+  background: lighten($color-active, 10);
+  color: $color-active, 10;
+}
+
+%warning {
+  background: lighten($color-warning, 10);
+  color: $color-warning, 10;
+}
+
+%info {
+  background: lighten($color-info, 10);
+  color: $color-info, 10;
+}
+
+%alert {
+  background: lighten($color-alert, 10);
+  color: $color-alert, 10;
+}
+
+%default {
+  background: contr($color-default, 10);
+  color: $color-default, 10;
+}

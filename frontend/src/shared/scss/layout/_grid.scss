@@ -1,0 +1,49 @@
+.grid {
+  display: grid;
+}
+
+.grid-gap {
+  @extend .grid;
+  grid-gap: 1em;
+}
+
+.grid-big-gap {
+  @extend .grid;
+  grid-gap: 4em;
+}
+
+.grid-column {
+  @extend .grid;
+  grid-auto-flow: column;
+}
+
+.grid-column-gap {
+  @extend .grid-gap;
+  @extend .grid-column
+}
+
+.grid-column-big-gap {
+  @extend .grid-big-gap;
+  @extend .grid-column
+}
+
+.grid-fr {
+  @extend .grid-gap;
+  grid-auto-rows: 1fr;
+  grid-auto-columns: 1fr;
+}
+
+.grid-center-wh {
+  @extend .grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.text-center {
+  text-align: center;
+}

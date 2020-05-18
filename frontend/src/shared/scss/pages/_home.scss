@@ -1,0 +1,73 @@
+
+.pz-login {
+  background: linear-gradient(70deg, $color-primary 50%, $color-secondary 50%, $color-secondary);
+}
+
+.pz-page {
+  display: grid;
+  grid-gap: 3em;
+  justify-items: stretch;
+  position: relative;
+  height: 100%;
+  overflow-y: auto;
+  padding: 2em 5%;
+  align-content: start;
+
+  &.center {
+    align-content: center;
+    justify-content: center;
+  }
+
+  &__logout {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1em;
+    min-width: 150px;
+  }
+
+  &__content-admin {
+    display: grid;
+    grid-template-rows: 300px 400px;
+    grid-gap: 4em;
+
+    @include from('laptop-l') {
+      grid-template-columns: 1.2fr 3fr;
+      grid-template-rows: 100%;
+    }
+  }
+
+  &__graphs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+
+    @include from('laptop-l') {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+    }
+  }
+
+  &__content-user {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 4em;
+  }
+
+  &__header {
+    @extend .grid-column-gap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__logo {
+    @include size(150px);
+    object-fit: cover;
+    display: block;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+}

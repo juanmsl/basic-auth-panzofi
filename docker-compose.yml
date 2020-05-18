@@ -1,0 +1,57 @@
+version: '3'
+services:
+  database:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_PASSWORD: localhost
+
+  migration:
+    build: ./backend
+    image: basic-auth:latest
+    container_name: migration
+    restart: on-failure
+    command: bash -c "python basic_auth/manage.py migrate --settings=basic_auth.settings.development && python basic_auth/manage.py create_admin_user --settings=basic_auth.settings.development && python basic_auth/manage.py create_random_users --settings=basic_auth.settings.development"
+    depends_on:
+      - database
+    env_file:
+      - backend-variables.env
+
+  backend:
+    build: ./backend
+    image: basic-auth:latest
+    container_name: backend
+    restart: on-failure
+    depends_on:
+      - migration
+      - database
+    env_file:
+      - backend-variables.env
+    ports:
+      - 8585:8585
+
+  frontend:
+    build: ./frontend
+    image: basic-auth-portal:latest
+    container_name: frontend
+    depends_on:
+      - backend
+    volumes:
+      - frontend-build:/usr/share/nginx/html
+    environment:
+      REACT_APP_BASIC_AUTH_SERVICES_URL: http://backend:8585
+      REACT_APP_REQUESTS_TIMEOUT: 10000
+
+  nginx:
+    image: nginx:latest
+    container_name: frontend-nginx
+    restart: always
+    volumes:
+      - frontend-build:/usr/share/nginx/html:ro
+    ports:
+      - 80:80
+    depends_on:
+      - frontend
+
+volumes:
+  frontend-build:

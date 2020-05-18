@@ -1,0 +1,43 @@
+
+.pz-table {
+  width: 100%;
+  position: relative;
+
+  caption {
+    text-align: left;
+    margin-bottom: 1em;
+  }
+
+  thead {
+    font-size: 0.5em;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: $font-weight-bold;
+    line-height: 2.5em;
+  }
+
+  tbody {
+    font-size: 0.8em;
+  }
+
+  th {
+    border-bottom: 1px solid $color-default;
+    position: sticky;
+    top: 0;
+    background: white;
+  }
+
+  td, th {
+    padding-right: 1em;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  td {
+    line-height: 1.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+}

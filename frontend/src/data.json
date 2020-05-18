@@ -1,0 +1,129 @@
+{
+	"pages": [
+		{ "name": "Home", "to": "/" },
+		{ "name": "About", "to": "/about" },
+		{ "name": "Services", "to": "/services" },
+		{ "name": "Portfolio", "to": "/portfolio" },
+		{ "name": "Blog", "to": "/blog" }
+	],
+	"contact": [
+		{ "icon": "linkedin", "to": "https://www.linkedin.com/in/juanmsl/" },
+		{ "icon": "github", "to": "https://github.com/juanmsl" },
+		{ "icon": "codepen", "to": "https://codepen.io/juanmsl" },
+		{ "icon": "email", "to": "mailto:juanmsl_pk@hotmail.com" }
+	],
+	"professional_skills": [
+		{
+			"name": "Frontend",
+			"color": "active",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos illo in, natus officiis quia quod. A minus praesentium quam soluta ut! Aspernatur deleniti dolores explicabo ipsa itaque placeat saepe voluptates.",
+			"skills": [
+				{ "name": "Angular.js", "value": 50 },
+				{ "name": "Html, Css, Js", "value": 98 },
+				{ "name": "React.js", "value": 92 },
+				{ "name": "Sass/Scss", "value": 97 }
+			]
+		},
+		{
+			"name": "Backend",
+			"color": "warning",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos illo in, natus officiis quia quod. A minus praesentium quam soluta ut! Aspernatur deleniti dolores explicabo ipsa itaque placeat saepe voluptates.",
+			"skills": [
+				{ "name": "Django", "value": 78 },
+				{ "name": "Node.js", "value": 65 },
+				{ "name": "Python", "value": 80 }
+			]
+		},
+		{
+			"name": "Web Design",
+			"color": "alert",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos illo in, natus officiis quia quod. A minus praesentium quam soluta ut! Aspernatur deleniti dolores explicabo ipsa itaque placeat saepe voluptates.",
+			"skills": [
+				{ "name": "Figma", "value": 80 },
+				{ "name": "Responsive Web Design", "value": 80 }
+			]
+		},
+		{
+			"name": "Infrastructure",
+			"color": "info",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos illo in, natus officiis quia quod. A minus praesentium quam soluta ut! Aspernatur deleniti dolores explicabo ipsa itaque placeat saepe voluptates.",
+			"skills": [
+				{ "name": "Ansible", "value": 75 },
+				{ "name": "Amazon Web Services (AWS)", "value": 70 },
+				{ "name": "Docker", "value": 80 },
+				{ "name": "Terraform", "value": 80 }
+			]
+		}
+	],
+	"services": [
+		{ "name": "Web Development", "image": "icons/web_development.svg" },
+		{ "name": "App Development", "image": "icons/app_development.svg" },
+		{ "name": "AWS Deployment", "image": "icons/aws_deployment.svg" },
+		{ "name": "Web Design", "image": "icons/web_design.svg" }
+	],
+	"portfolio": [
+		{
+			"name": "npm - React Json To Form",
+			"image": "portfolio/react_json_to_form.png",
+			"categories": ["Frontend"]
+		},
+		{
+			"name": "npm - React Viewport size",
+			"image": "portfolio/react_viewport_size.png",
+			"categories": ["Frontend"]
+		},
+		{
+			"name": "Django - Auth App",
+			"image": "portfolio/auth_app.png",
+			"categories": ["Backend"]
+		},
+		{
+			"name": "Dashboard",
+			"image": "portfolio/dashboard_app.png",
+			"categories": ["Frontend", "Backend", "Design"]
+		}
+	],
+	"experience": [
+		{
+			"date": "Jan 2020 - Present",
+			"name": "FullStack developer",
+			"place": "MO Tecnologías",
+			"description": [
+				"I’ve been working with Django and Angular creating different web applications; also, I use ReactJS to create different projects in the company, and giving development training and workshops about ReactJS"
+			]
+		},
+		{
+			"date": "Feb 2018 - Present",
+			"name": "Infrastructure Engineer",
+			"place": "MO Tecnologías",
+			"description": [
+				"I work with Amazon Web Services (AWS) deploying the infrastructure using Terraform, Ansible and Docker, configure vpn’s, and research about new technologies to work in AWS, and how to integrate them on the company.",
+				"I created multiple tools to automatize and help many processes in the company, such as a Slack server to handle deployment requests; also, I create a python package with multiple scripts to help development team, and infrastructure team."
+			]
+		},
+		{
+			"date": "Feb 2015 - Nov 2017",
+			"name": "Monitor assistant in subjects of Algorithmic Thinking, Computer Programing and Data Structures",
+			"place": "Pontifical Javerian University",
+			"description": [
+				"I had to attend the teacher, answering questions from the students, supporting them in workshops, partials and projects, as well as classes apart from accompaniment in which the students attended with questions."
+			]
+		},
+		{
+			"date": "Feb 2015 - Nov 2017",
+			"name": "Algorithmic Thinking workshops through the ACM’s student chapter",
+			"place": "Pontifical Javerian University",
+			"description": [
+				"I had to prepare the workshops about variables, conditionals, functions, and basic data structures in C++ and python, to help students to study for their exams."
+			]
+		},
+		{
+			"date": "Feb 2015 - Nov 2017",
+			"name": "Web development workshops",
+			"place": "Pontifical Javerian University",
+			"description": [
+				"I teach about HTML5, CSS3 and JavaScript, using tools and frameworks as SCSS, and Pug, their workshops, was focused on frontend development, with examples exposed on my CodePen profile."
+			]
+		}
+	]
+}
