@@ -10,10 +10,15 @@ This is a test for an interview with Panzofi, the purpose of this repo, is to cr
 
 1. Run
     ```bash
-    docker-compose-up
+    docker-compose-up -d --build
+    docker-compose exec backend python basic_auth/manage.py migrate --settings=basic_auth.settings.development --noinput
+    docker-compose exec backend python basic_auth/manage.py create_admin_user --settings=basic_auth.settings.development
+    docker-compose exec backend python basic_auth/manage.py create_random_users --settings=basic_auth.settings.development
     ```
    
-    It will run a database in postgres, then it will start the Django server, an will run the migrations and setup the initial data, at last it will mount a nginx server to deploy the portal
+    - It will run a database in postgres, then it will start the Django server, at last it will mount a nginx server to deploy the portal
+    - Run the migrations
+    - Setup the initial data
 
 ## Information
 
@@ -46,3 +51,15 @@ password: qwerty_12
 
 You can open the portal on your web browser typing
 http://localhost
+
+### Database
+
+You can access to the database using your favorite database manager with following credentials
+
+```
+DATABASE_HOST=127.0.0.1
+DATABASE_NAME=basic-auth
+DATABASE_PASSWORD=backend
+DATABASE_PORT=5432
+DATABASE_USER=backend
+```

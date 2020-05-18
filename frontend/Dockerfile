@@ -1,33 +1,16 @@
-FROM node:8-slim
-
-RUN groupadd user && useradd --create-home --home-dir /home/user -g user user
-
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    libpq-dev \
-    build-essential \
-    default-libmysqlclient-dev \
-    libssl-dev \
-    libffi-dev \
-    libcurl4-openssl-dev \
-    && rm -rf /var/lib/apt/lists/* \
-    && curl -o- -L https://yarnpkg.com/install.sh | bash
-
-RUN mkdir -p /code && chown user:user /code
-
-RUN mkdir -p /usr/share/nginx/html && chown user:user /usr/share/nginx/html
-
-COPY package.json yarn.lock /code/
-
-RUN yarn
-
-ADD . /code
-
-WORKDIR /code
-
-RUN npm rebuild node-sass
-
+# stage1 - build react app first
+FROM node:12.16.1-alpine3.9 as build
+WORKDIR /app
+ENV PATH /app/node_modules/.bin:$PATH
+COPY ./package.json ./yarn.lock /app/
+RUN yarn --silent
+ADD . /app
 RUN yarn build
 
-COPY /code/build/* /usr/share/nginx/html/
-
-USER user
+# stage 2 - build the final image and copy the react build files
+FROM nginx:1.17.8-alpine
+COPY --from=build /app/build /usr/share/nginx/html
+RUN rm /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
