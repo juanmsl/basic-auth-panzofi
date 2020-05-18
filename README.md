@@ -7,6 +7,8 @@ This is a test for an interview with Panzofi, the purpose of this repo, is to cr
 1. Clone this repository
 
 1. Be sure you have installed `docker-compose` on your machine
+    
+    If you dont have `docker-compose` installed, follow this guide to install it on your OS.
 
 1. Run
     ```bash
