@@ -13,7 +13,7 @@ This is a test for an interview with Panzofi, the purpose of this repo, is to cr
 
 1. Run
     ```bash
-    docker-compose-up -d --build
+    docker-compose up -d --build
     docker-compose exec backend python basic_auth/manage.py migrate --settings=basic_auth.settings.development --noinput
     docker-compose exec backend python basic_auth/manage.py create_admin_user --settings=basic_auth.settings.development
     docker-compose exec backend python basic_auth/manage.py create_random_users --settings=basic_auth.settings.development
