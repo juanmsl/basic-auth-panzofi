@@ -9,7 +9,8 @@ This is a test for an interview with Panzofi, the purpose of this repo, is to cr
 1. Be sure you have installed `docker` and `docker-compose` on your machine.
     
     If you dont have `docker-compose` installed, follow this guide to install it on your OS.
-    https://docs.docker.com/compose/install/
+    - *Docker:* https://docs.docker.com/get-docker/
+    - *Docker Compose:* https://docs.docker.com/compose/install/
 
 1. Run
     ```bash
